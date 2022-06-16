@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/zxing_barcode_scanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:zxing_scanner_layout="@layout/custom_barcode_scanner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/green_02">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green_02"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/zxing_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/zxing_transparent"
+            android:text="바코드를 사각형에 맞게 인식시켜 주세요.\n인식되지 않으면 하단에 바코드 번호를 입력해주세요."
+            android:textAlignment="center"
+            android:textColor="@color/zxing_status_text" />
+
+        <EditText
+            android:id="@+id/textGifticonNum"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="바코드 번호 입력"
+            android:inputType="number"
+            android:maxLength="20"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/textViewBarcode"
+            app:layout_constraintStart_toStartOf="@+id/textViewBarcode"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBarcode" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonGifticonAddNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="입력 완료" />
+
+
+    </LinearLayout>
+</RelativeLayout>
